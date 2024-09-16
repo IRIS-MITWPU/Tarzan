@@ -1,39 +1,57 @@
+# Project: YOLO Input-Based Detection System with CAN Bus Integration
 
-1. Software 
+## 1. Software
 
+### 1.1 YOLOv8 Detection
 
-1.2 YOLO inputs 
+**Goal:**  
+Develop an app or service that uses the phone's back camera as an input stream for a YOLO model running on a laptop. For initial implementation, we'll use the IP Webcam to stream the camera feed to the laptop.
 
-make an app / service which takes in an input from the phone back camera which will act as in input for the YOLO model to take the data as in input ON THE LAPTOP mainly as of now .
-we can use the IP WEBCAM for the time being 
+- **Reference:**  
+  [YOLOv8 Pothole & Obstacle Detection](https://www.youtube.com/watch?v=zgbPj4lSc58&list=PL1u-h-YIOL0sZJsku-vq7cUGbqDEeDK0a)
 
+- **Inputs:**
+  - Camera feed streamed via IP Webcam
 
-1.1 YOLOv8 detection 
-https://www.youtube.com/watch?v=zgbPj4lSc58&list=PL1u-h-YIOL0sZJsku-vq7cUGbqDEeDK0a
-for pothole and obstacle deteciton initiallty 
+- **Outputs:**
+  - **Temporary Output:** Temperature and pressure values for CAN messages.
+  - **Permanent Output:** CAN messages sent to the Panda (placeholder name for now).
 
-INPUT - stream of inputs from the YOLO INPUTS point 
-OUTPUT - temp - pressure values for the can msgs 
-        Perma - CAN msgs to the Panda [for the lack of a better name as of now] 
+---
 
+### 1.2 CAN Bus Software
 
-1.2 CAN BUS software 
+#### 1.2.1 CAN Bus Sniffing
 
-1.2.1 CAN bus sniffing - using cabana for any car / OBD sniffing 
-1.2.2 CAN bus msgs - using STM send msgs to the car for the msg input and expect an output as an action 
+- **Objective:** Use **Cabana** to sniff CAN bus data from any car via OBD-II.
+  
+#### 1.2.2 CAN Bus Messaging
 
+- **Objective:** Use **STM32** to send messages to the car's CAN bus, expecting specific actions based on the messages.
 
-tech used = STM32 , rust , c , c++ . react , python  
+- **Technologies Involved:**
+  - **STM32** for CAN message interfacing
+  - **Programming Languages:** Rust, C, C++, Python
+  - **Frontend:** React
 
-1.4ACTUATOR USGAE [TEMP]
+---
 
-find out optimal pressure values of the actuator and then do the pressure mapping for the actuatoruy to sudo-run the car in the mode we want 
+### 1.3 Actuator Usage (Temporary Phase)
 
+- **Objective:** Determine optimal pressure values for the actuator and perform pressure mapping to control the car in a test mode. 
 
-2. HARDWARE 
+---
 
-2.1 Temporary Working 
+## 2. Hardware
 
-We need to make an actuator follow the commands which will be given to the can bus but are now being done in the car superficially just for the lack of a better test car 
+### 2.1 Temporary Setup
 
-2.2 Long term soln - we need to make the STM device PCB in the long term which will be 3D printed and be attached to the OBD port 
+- **Objective:** Develop an actuator that follows commands sent via CAN bus. Initially, these commands will be tested superficially in a car for validation purposes, without full integration.
+
+---
+
+### 2.2 Long-Term Solution
+
+- **Objective:** Develop a custom PCB based on **STM32** for CAN bus communication, which will be 3D-printed and connected to the car's **OBD-II** port.
+
+---
