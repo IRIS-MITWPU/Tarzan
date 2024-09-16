@@ -12,6 +12,7 @@ Develop an app or service that uses the phone's back camera as an input stream f
 
 - **Inputs:**
   - Camera feed streamed via IP Webcam
+  - **Frontend:** React
 
 - **Outputs:**
   - **Temporary Output:** Temperature and pressure values for CAN messages.
@@ -32,7 +33,7 @@ Develop an app or service that uses the phone's back camera as an input stream f
 - **Technologies Involved:**
   - **STM32** for CAN message interfacing
   - **Programming Languages:** Rust, C, C++, Python
-  - **Frontend:** React
+  
 
 ---
 
@@ -46,7 +47,7 @@ Develop an app or service that uses the phone's back camera as an input stream f
 
 ### 2.1 Temporary Setup
 
-- **Objective:** Develop an actuator that follows commands sent via CAN bus. Initially, these commands will be tested superficially in a car for validation purposes, without full integration.
+- **Objective:** Develop an actuator that follows commands sent via the YOLO outputs . Initially, these commands will be tested superficially in a car for validation purposes, without full integration.
 
 ---
 
