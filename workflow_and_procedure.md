@@ -1,4 +1,6 @@
-# Project: YOLO Input-Based Detection System with CAN Bus Integration
+# Project: Tarzan
+
+##  YOLO Input-Based Detection System with CAN Bus Integration
 
 ## 1. Software
 
@@ -15,7 +17,7 @@ Develop an app or service that uses the phone's back camera as an input stream f
   - **Frontend:** React
 
 - **Outputs:**
-  - **Temporary Output:** Temperature and pressure values for CAN messages.
+  - **Temporary Output:** Temperature and pressure values for Actuator
   - **Permanent Output:** CAN messages sent to the Panda (placeholder name for now).
 
 ---
