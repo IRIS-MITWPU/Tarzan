@@ -16,7 +16,7 @@ two values from them are also required which will be conf_lm , conf_rm which ran
 
 I have 6 cases in total (d is used to show delta or change in an param)
 
-    1. slow and divert --> t = t - dt , b = b + db , st = st+- st taking into account conf_lm (case for + sign ) , conf_rm (case for - sign )
+    1. slow and divert --> t = t - dt , b = b + db , st = xst+- st taking into account conf_lm (case for + sign ) , conf_rm (case for - sign )
     2. fast and diverrt -->  t = t + dt , b = b - db , st = st+- st taking into account conf_lm (case for + sign ) , conf_rm (case for - sign )
     3. constant and divert -->  t = t  , b = b  , st = st+- st taking into account conf_lm (case for + sign ) , conf_rm (case for - sign )
 
