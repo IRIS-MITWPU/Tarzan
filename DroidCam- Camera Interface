@@ -1,0 +1,40 @@
+Instructions:
+1. Download droidcam app on your Android device from play store
+
+2. Download and install Dev47app setup on your pc.
+
+3. On the phone, go to Settings -> Developer Options, and enable “USB Debugging”.
+
+4. (In case) On most phones the Developer options screen is hidden by default. To make it visible, go to Settings > About phone and tap “Build number” 7 times. Return to the previous screen to find “Developer options” at the bottom.
+   Plug the device into computer over USB and open Droidcam app.
+ 
+5. If you get a dialog on the phone asking “Allow USB Debugging”, you need to tap OK.
+   If you get dialog Use USB for When you plugged in, give permission to Photo transfer(PTP)
+   open Droidcam app on pc and click on USB logo and press refreash button, you will get your device name or some random string(unique id).
+
+6. Add port which is showing in your mobile screen(generally 4747).
+
+7. Hit start button and you will get camera input on your computer screen.
+
+8. run below code and you will get your mobile camera input(make sure you installed all libraries using requirements.txt).
+
+
+
+Python Code:
+import cv2
+
+cap = cv2.VideoCapture(1)
+'''if you get error instead of 1 try -1,2,3'''
+
+while True:
+    rate,frame = cap.read()
+    
+    cv2.imshow('web_cam',frame)
+
+    '''Press Q key for exit'''
+    
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+        
+cap.release()
+cv2.destroyAllWindows()
