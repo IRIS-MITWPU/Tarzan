@@ -1,0 +1,24 @@
+import cv2
+import serial
+import time
+
+# Open serial port (adjust COM port and baud rate as needed)
+ser = serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
+
+cap = cv2.VideoCapture(0)
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    # Resize and convert to grayscale to reduce data size
+    frame = cv2.resize(frame, (160, 120))
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    
+    # Send frame data via serial
+    ser.write(gray.tobytes())
+    time.sleep(0.1)  # Ensure data transmission stability
+
+cap.release()
+ser.close()
